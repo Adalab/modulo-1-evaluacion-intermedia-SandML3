@@ -16,11 +16,15 @@ html {
 .header {
     width: 100vw;
     background-color: white;
+    position: fixed;
+}
+
+.header .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    
 }
 
 .header .logo {
@@ -52,7 +56,26 @@ html {
     font-size: 3rem;
     font-weight: 800;
     width: 20rem;
+    /* He optado por darle un ancho en rems en vez de en porcentaje porque de esta forma el lema se mantiene siempre dispuesto como en el ejemplo (cada palabra en una línea) y no varía conforme cambia el tamaño de la pantalla.  Con ciertas dimensiones de pantalla parece haber overflow pero como se mantiene visible no me ha parecido un inconveniente.*/
     line-height: 3.5rem;
     text-align: center;
     color: white;
+}
+
+
+@media all and (min-width: 768px) {
+    .header .content {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2rem 3rem;
+        /* Para poder aplicar este margen, he creado un nuevo <div></div> que contenga el logo y el menú del header, ya que si lo aplicaba directamente desde el header se veía afectado el fondo blanco. Una opción alternativa hubiera sido emplear padding en vez de margin, pero he optado por esta opción porque no sabía si queríais que usásemos literalmente la propiedad 'margin'. */
+    }
+
+    .header .logo {
+        margin: 0;
+    }
+
+    .main .slogan {
+        font-size: 4rem;
+    }
 }
