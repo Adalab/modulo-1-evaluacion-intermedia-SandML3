@@ -41,6 +41,7 @@ html {
 .header .link {
     text-decoration: none;
     color: var(--menu-color);
+    text-transform: uppercase;
 }
 
 .main {
