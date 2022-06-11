@@ -24,24 +24,26 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
 
 .header .logo {
-    margin: 1rem;
+    padding: 1rem;
 }
 
 .header .menu {
-    margin-bottom: 1.3rem;
     font-size: 1.6rem;
     display: flex;
-    gap: 2rem;
+    margin-bottom: 1.3rem
 }
 
 .header .link {
     text-decoration: none;
     color: var(--menu-color);
     text-transform: uppercase;
+}
+
+.header .menu .link {
+    padding: 1rem;
 }
 
 .main {
@@ -65,13 +67,19 @@ html {
 }
 
 
+
 @media all and (min-width: 768px) {
     .header .content {
         flex-direction: row;
         justify-content: space-between;
-        margin: 2rem 3rem;
+        margin: 1rem 2rem;
         /* Para poder aplicar este margen, he creado un nuevo <div></div> que contenga el logo y el menú del header, ya que si lo aplicaba directamente desde el header se veía afectado el fondo blanco. Una opción alternativa hubiera sido emplear padding en vez de margin, pero he optado por esta opción porque no sabía si queríais que usásemos literalmente la propiedad 'margin'. */
     }
+
+    .header .menu {
+        margin: 2rem 0;
+    }
+  
 
     .header .logo {
         margin: 0;
